@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 const TYPE_COLORS = {
-    bug: '#212121',
+    bug: '#62D5AE',
     dark: '#1F1F1F',
     dragon: '#F16F65',
     electric: '#FFCE4B',
@@ -14,7 +14,7 @@ const TYPE_COLORS = {
     grass: '#62D5AE',
     ground: '#705849',
     ice: '#6D7BE3',
-    normal: '#F5F5F5',
+    normal: '#BCBCBC',
     poison: '#9F449F',
     psychic: '#F7A2DF',
     rock: '#939393',

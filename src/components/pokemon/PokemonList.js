@@ -6,13 +6,13 @@ import PokemonCard from './PokemonCard';
 export default class PokemonList extends Component {
 
     state = {
-        url: "https://pokeapi.co/api/v2/pokemon?limit=963",
+        url: "https://pokeapi.co/api/v2/pokemon?limit=12",
         pokemon: null
     };
 
     async componentDidMount() {
         const res = await axios.get(this.state.url);
-        this.setState({ pokemon: res.data['results']});
+        this.setState({ pokemon: res.data['results'] });
     }
 
 

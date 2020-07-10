@@ -3,6 +3,6 @@
     min-height: 100vh;
 }
 
-.navbar{
-    background-color: #ef5350 !important;
+.col-md-12{
+    display: inline-block !important;
 }
