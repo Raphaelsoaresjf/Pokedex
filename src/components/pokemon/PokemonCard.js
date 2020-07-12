@@ -97,7 +97,7 @@ export default class PokemonCard extends Component {
                     <Card className="card" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`, borderColor: `${TYPE_COLORS[this.state.types[0]]}`}}>
                         <div className="col-md-12 col-sm-12"> 
                             <div className="col-md-8 col-sm-12 float-right mt-3"> 
-                                <h4 className="col-md-12 col-sm-12" style={{color: 'white'}}>
+                                <h4 className="col-md-12 col-sm-12 ib" style={{color: 'white'}}>
                                     {this.state.name
                                         .toLowerCase()
                                         .split(' ')
@@ -107,7 +107,7 @@ export default class PokemonCard extends Component {
                                         .join(' ')
                                     }
                                 </h4>
-                                <div className="col-md-12 col-sm-12">
+                                <div className="col-md-12 col-sm-12 ib">
                                     <div className="float-left">
                                         {this.state.types.map( type => (
                                             <span 
@@ -126,7 +126,7 @@ export default class PokemonCard extends Component {
                                         ))}
                                     </div>              
                                 </div>
-                                <div className="col-md-12 col-sm-12">
+                                <div className="col-md-12 col-sm-12 ib">
                                     <h7>
                                         #{this.state.frontIndex}
                                     </h7>
