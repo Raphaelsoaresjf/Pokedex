@@ -25,11 +25,10 @@
     margin-left: 25% !important;
 }
 .mt-60{
-    margin-top: 60px;
-    height: 5em;
+    margin-top: -10px;
 }
-.mt75{
-    margin-top: 75px;
+.mt90{
+    margin-top: 90px;
 }
 .mt-65{
     margin-top: -65px;
@@ -38,4 +37,10 @@
 }
 .pokeHeader{
     height: 22em !important;
+}
+.poke-title{
+    font-size: 55pt;
+}
+.pd-0{
+    padding: 0px;
 }

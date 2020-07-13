@@ -3,7 +3,7 @@ import PokemonList from '../pokemon/PokemonList';
 
 function Dashboard() {
     return (
-     <div className="row">
+     <div>
         <div className="col">
             <PokemonList/>
         </div>

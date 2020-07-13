@@ -92,7 +92,7 @@ export default class PokemonCard extends Component {
 
     render(){
         return (
-            <div className="col-md-4 col-sm-6 mb-5">
+            <div className="col-md-4 col-sm-6 mb-5 col-6">
                 <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
                     <Card className="card" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`, borderColor: `${TYPE_COLORS[this.state.types[0]]}`}}>
                         <div className="col-md-12 col-sm-12"> 

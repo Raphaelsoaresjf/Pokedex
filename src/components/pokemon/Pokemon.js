@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Tabs, Tab} from 'react-bootstrap';
+import Arrow from './arrow.png';
 
 const TYPE_COLORS = {
     bug: '#62D5AE',
@@ -141,7 +142,7 @@ export default class Pokemon extends Component {
             .join(', ');
 
             const hatchSteps = 255 * (res.data['hatch_counter'] + 1);
-
+            const frontIndex = ('000' + pokemonIndex).slice(-3);
 
             this.setState({
                 description,
@@ -150,6 +151,7 @@ export default class Pokemon extends Component {
                 catchRate,
                 eggGroups,
                 hatchSteps,
+                frontIndex
             })
         });
 
@@ -177,15 +179,31 @@ export default class Pokemon extends Component {
             <div>
                 <div className="card-header pokeHeader" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`}}>
                     <div className="row">
-                        <div className="col-12">
-                            <div className="float-right">
+                        <div className="row col-12">
+                        <a className="mx-auto" href='#' style={{alignSelf: 'center', justifyContent: 'center'}}>
+                            <img 
+                                src={Arrow} 
+                                style={{width: '1em', height: '1em', color: 'white'}} 
+                                className="card-mg-top rounded mx-auto d-block mt-2"
+                            />
+                        </a>
+                        <div className="mx-auto col-md-6 poke-title" style={{color: 'white', fontWeight: '500'}}>
+                                {this.state.name
+                                    .toLowerCase()
+                                    .split(' ')
+                                    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                                    .join(' ')
+                                }
+                            </div>
+                            <div className="mx-auto col-md-6">
                                 {this.state.types.map( type => (
                                     <span 
                                         key={type}
                                         className="badge badge-primary badge-pill mr-1"
                                         style={{
                                             backgroundColor: `${TYPE_COLORS[type]}`,
-                                            color: 'white'
+                                            color: 'white',
+                                            fontSize: '11pt'
                                         }}
                                     >
                                         {type
@@ -195,16 +213,8 @@ export default class Pokemon extends Component {
                                         .join(' ')}
                                     </span>
                                 ))}
+                                 <h5 style={{color: 'white', float: 'right'}}>#{this.state.frontIndex}</h5>
                             </div>
-                            <h4 className="mx-auto">
-                                {this.state.name
-                                    .toLowerCase()
-                                    .split(' ')
-                                    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-                                    .join(' ')
-                                }
-                            </h4>
-                            <h5>{this.state.pokemonIndex}</h5>
                         </div>
                         <div className="col-md-12 df idx mt-60" >
                             <img style={{width: '15em', height: '15em'}} src={this.state.imageUrl}
@@ -214,7 +224,7 @@ export default class Pokemon extends Component {
                     </div>
                 </div>
                 <div className="card mt-65 col-md-6 ml-25">
-                    <div className="mt75">
+                    <div className="mt90">
                         <Tabs defaultActiveKey="profile" id="navTab">
                             <Tab eventKey="about" title="About">
                                 <div className="card-body">
@@ -290,10 +300,10 @@ export default class Pokemon extends Component {
                                         <div className="col-md-9">
                                             <div className="row align-items-center">
                                                 <div className="col-12 col-md-3">HP:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-1 col-sm-2">
                                                     {this.state.stats.hp}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-12 col-md-8 col-sm-7">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
