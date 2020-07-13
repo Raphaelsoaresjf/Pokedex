@@ -6,7 +6,7 @@ import PokemonCard from './PokemonCard';
 export default class PokemonList extends Component {
 
     state = {
-        url: "https://pokeapi.co/api/v2/pokemon?limit=12",
+        url: "https://pokeapi.co/api/v2/pokemon?limit=151",
         pokemon: null
     };
 
@@ -38,5 +38,3 @@ export default class PokemonList extends Component {
         );
     }
 }
-
-// export default PokemonList;
