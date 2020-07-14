@@ -311,11 +311,11 @@ export default class Pokemon extends Component {
                                     <div className="row align-items-center">
                                         <div className="col-md-9">
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">HP:</div>
-                                                <div className="col-md-1 col-sm-2">
+                                                <div className="col-md-3 col-4 fontStats">HP:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.hp}
                                                 </div>
-                                                <div className="col-12 col-md-8 col-sm-7">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
@@ -330,11 +330,11 @@ export default class Pokemon extends Component {
                                                 </div>
                                             </div>
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">Attack:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-3 col-4 fontStats">Attack:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.attack}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
@@ -349,11 +349,11 @@ export default class Pokemon extends Component {
                                                 </div>
                                             </div>
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">Defense:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-3 col-4 fontStats">Defense:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.defense}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
@@ -368,11 +368,11 @@ export default class Pokemon extends Component {
                                                 </div>
                                             </div>
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">Speed:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-3 col-4 fontStats">Speed:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.speed}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
@@ -387,11 +387,11 @@ export default class Pokemon extends Component {
                                                 </div>
                                             </div>
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">Special Attack:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-3 col-4 fontStats">Special Attack:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.specialAttack}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
@@ -406,11 +406,11 @@ export default class Pokemon extends Component {
                                                 </div>
                                             </div>
                                             <div className="row align-items-center">
-                                                <div className="col-12 col-md-3">Special Defense:</div>
-                                                <div className="col-md-1">
+                                                <div className="col-md-3 col-4 fontStats">Special Defense:</div>
+                                                <div className="col-md-1 col-2">
                                                     {this.state.stats.specialDefense}
                                                 </div>
-                                                <div className="col-12 col-md-8">
+                                                <div className="col-md-8 col-6">
                                                     <div className="progress">
                                                         <div 
                                                             className="progress-bar" 
