@@ -216,9 +216,10 @@ export default class Pokemon extends Component {
                                  <h5 style={{color: 'white', float: 'right'}}>#{this.state.frontIndex}</h5>
                             </div>
                         </div>
+                        <div className="bgInfPoke mx-auto"></div>
                         <div className="col-md-12 df idx mt-60" >
                             <img style={{width: '15em', height: '15em'}} src={this.state.imageUrl}
-                                className="card-img-top rounded mx-auto mt-2"
+                                className=" rounded mx-auto imgInfoPoke"
                             />
                         </div>
                     </div>

@@ -63,6 +63,33 @@
     float: left;
 }
 
+.bgPoke{
+    width: 10em;
+    height: 10em;
+    background-color: white;
+    opacity: 0.2;
+    position: absolute;
+    border-radius: 10em;
+    margin-top: 10px;
+    margin-left: -35px;
+    z-index: -1;
+}
+
+.bgInfPoke{
+    width: 15em;
+    height: 15em;
+    background-color: white;
+    opacity: 0.2;
+    border-radius: 10em;
+    margin-top: 0px;
+    margin-left: -35px;
+    z-index: 0;
+}
+
+.imgInfoPoke{
+    margin-top: -24vh !important;
+}
+
 @media only screen and (max-width: 600px) {
     .ml-25{
         margin-left: 0% !important;
@@ -87,5 +114,32 @@
     .pokePos{
         margin-top: -40px;
         float: right;
+    }
+    .bgPoke{
+        width: 6em;
+        height: 6em;
+        background-color: white;
+        opacity: 0.2;
+        position: absolute;
+        border-radius: 10em;
+        margin-top: 10px;
+        margin-left: -5px;
+        z-index: -1;
+    }
+
+    .bgInfPoke{
+        width: 15em;
+        height: 15em;
+        background-color: white;
+        opacity: 0.2;
+        position: absolute;
+        border-radius: 10em;
+        margin-top: 104px;
+        margin-left: 58px !important;
+        z-index: 0;
+    }
+
+    .imgInfoPoke{
+        margin-top: 0vh !important;
     }
   }

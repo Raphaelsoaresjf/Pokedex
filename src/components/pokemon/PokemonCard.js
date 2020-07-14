@@ -94,7 +94,7 @@ export default class PokemonCard extends Component {
         return (
             <div className="col-md-4 col-sm-6 mb-5 col-6">
                 <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
-                    <Card className="card" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`, borderColor: `${TYPE_COLORS[this.state.types[0]]}`}}>
+                    <Card className="card" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`, borderColor: `${TYPE_COLORS[this.state.types[0]]}`, zIndex: '-2'}}>
                         <div className="col-md-12 col-sm-12" style={{ padding: '0px'}}> 
                             <div className="col-md-8 col-sm-12 float-right mt-3"> 
                                 <div className="col-md-12 col-sm-12 ib cardTitle" style={{color: 'white'}}>
@@ -114,7 +114,7 @@ export default class PokemonCard extends Component {
                                                 key={type}
                                                 className="badge badge-primary badge-pill mr-1"
                                                 style={{
-                                                    backgroundColor: `${TYPE_COLORS[type]}`,
+                                                    backgroundColor: `${TYPE_COLORS[type]}`
                                                 }}
                                             >
                                                 {type
@@ -140,19 +140,23 @@ export default class PokemonCard extends Component {
                                         className="card-mg-top rounded mx-auto d-block mt-2"
                                     />
                                 ) : null}
-                                <Sprite 
-                                    className="card-img-top rounded mt-2 imgPoke"
-                                    onLoad={() => this.setState({imageLoading: false})}
-                                    onError={() => this.setState({imageLoading: true})}
-                                    src={this.state.imageUrl}
-                                    style={
-                                        this.state.toManyRequests ? {display: "none"} :
-                                        this.state.imageLoading ? null : {display: "block"}
-                                    }
-                                />
+                                <div className="bgPoke">
+                                </div>
+                                    <Sprite 
+                                        className="card-img-top rounded mt-2 imgPoke"
+                                        onLoad={() => this.setState({imageLoading: false})}
+                                        onError={() => this.setState({imageLoading: true})}
+                                        src={this.state.imageUrl}
+                                        style={
+                                            this.state.toManyRequests ? {display: "none"} :
+                                            this.state.imageLoading ? null : {display: "block"}
+                                        }
+                                    />
+                                 
                                 {this.state.toManyRequests ? (<h6 className="mx-auto">
                                     <span className="badge badge-danger mt-2">Falha na Requisição</span>
                                 </h6>) : null}
+                               
                             </div>
                         </div>
                     </Card>
