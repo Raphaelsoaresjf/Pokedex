@@ -95,9 +95,9 @@ export default class PokemonCard extends Component {
             <div className="col-md-4 col-sm-6 mb-5 col-6">
                 <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
                     <Card className="card" style={{backgroundColor: `${TYPE_COLORS[this.state.types[0]]}`, borderColor: `${TYPE_COLORS[this.state.types[0]]}`}}>
-                        <div className="col-md-12 col-sm-12"> 
+                        <div className="col-md-12 col-sm-12" style={{ padding: '0px'}}> 
                             <div className="col-md-8 col-sm-12 float-right mt-3"> 
-                                <h4 className="col-md-12 col-sm-12 ib" style={{color: 'white'}}>
+                                <div className="col-md-12 col-sm-12 ib cardTitle" style={{color: 'white'}}>
                                     {this.state.name
                                         .toLowerCase()
                                         .split(' ')
@@ -106,8 +106,8 @@ export default class PokemonCard extends Component {
                                         )
                                         .join(' ')
                                     }
-                                </h4>
-                                <div className="col-md-12 col-sm-12 ib">
+                                </div>
+                                <div className="col-md-12 col-12 ib typeFont">
                                     <div className="float-left">
                                         {this.state.types.map( type => (
                                             <span 
@@ -126,13 +126,13 @@ export default class PokemonCard extends Component {
                                         ))}
                                     </div>              
                                 </div>
-                                <div className="col-md-12 col-sm-12 ib">
-                                    <h7>
+                                <div className="col-md-12 col-12 ib pokeIndex">
+                                    <div>
                                         #{this.state.frontIndex}
-                                    </h7>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-md-4 col-sm-12 float-left"> 
+                            <div className="col-md-4 col-8 pokePos"> 
                                 {this.state.imageLoading ? (
                                     <img 
                                         src={spinner} 
@@ -141,7 +141,7 @@ export default class PokemonCard extends Component {
                                     />
                                 ) : null}
                                 <Sprite 
-                                    className="card-img-top rounded mt-2"
+                                    className="card-img-top rounded mt-2 imgPoke"
                                     onLoad={() => this.setState({imageLoading: false})}
                                     onError={() => this.setState({imageLoading: true})}
                                     src={this.state.imageUrl}

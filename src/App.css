@@ -44,3 +44,48 @@
 .pd-0{
     padding: 0px;
 }
+.cardTitle{
+    font-size: 18pt;
+    font-weight: 500;
+}
+.typeFont{
+    font-size: 12pt;
+}
+.pokeIndex{
+    font-size: 12pt;
+}
+.imgPoke{
+    width: 8em;
+    height: 8em;
+}
+.pokePos{
+    margin-top: 0px;
+    float: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .ml-25{
+        margin-left: 0% !important;
+    }
+    .poke-title{
+        font-size: 30pt;
+    }
+    .cardTitle{
+        font-size: 8pt;
+        font-weight: 700;
+    }
+    .typeFont{
+        font-size: 8pt;
+    }
+    .pokeIndex{
+        font-size: 8pt;
+    }
+    .imgPoke{
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .pokePos{
+        margin-top: -40px;
+        float: right;
+    }
+  }
