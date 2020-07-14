@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import PokemonCard from './PokemonCard';
 import Pagination from '../layout/Pagination';
+import Searchbar from '../layout/Searchbar';
 
 export default class PokemonList extends Component {
 
@@ -20,7 +21,10 @@ export default class PokemonList extends Component {
     render(){
         return (
             <div className="container App">
-                <div className="dexTitle">Pokedex</div>
+                <div className="row">
+                    <div className="dexTitle col-md-9 col-12">Pokedex</div>
+                    <div className="float-right" style={{alignSelf: 'center'}}><Searchbar/></div>
+                </div>
                 <React.Fragment>
                     {this.state.pokemon ? (
                         <div className="row">

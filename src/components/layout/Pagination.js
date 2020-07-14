@@ -14,7 +14,7 @@ export default function PaginationLink() {
           return (
             <Pagination
               page={page}
-              count={10}
+              count={81}
               renderItem={(item) => (
                 <PaginationItem
                   component={Link}
