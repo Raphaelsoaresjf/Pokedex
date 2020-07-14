@@ -89,6 +89,23 @@
 .imgInfoPoke{
     margin-top: -24vh !important;
 }
+.genderPos{
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    margin-top: 3px;
+    margin-left: 5px;
+    
+}
+.fontGender{
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.fontStats{
+    color: #939393;
+    font-weight: 500;
+}
 
 @media only screen and (max-width: 600px) {
     .ml-25{
@@ -142,4 +159,8 @@
     .imgInfoPoke{
         margin-top: 0vh !important;
     }
+    .fontGender{
+        font-size: 9pt;
+    }
+
   }

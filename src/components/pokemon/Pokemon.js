@@ -109,7 +109,7 @@ export default class Pokemon extends Component {
             }
             return false;
         }).map(stat => {
-            return `${stat.effor} ${stat.stat.name}`
+            return `${stat.effort} ${stat.stat.name}`
             .toLowerCase()
             .split('-')
             .map(s => s.charAt(0).toUpperCase() + s.substring(1))
@@ -233,7 +233,7 @@ export default class Pokemon extends Component {
                                         <div className="col-md-6">
                                             <div className="row">
                                                 <div className="col-md-6 col-6">
-                                                    <h6 className="float-left">Height:</h6>
+                                                    <div className="float-left fontStats">Height:</div>
                                                 </div>
                                                 <div className="col-md-6 col-6">
                                                     <h6 className="float-left">{this.state.height} m</h6>
@@ -241,7 +241,7 @@ export default class Pokemon extends Component {
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-6 col-6">
-                                                    <h6 className="float-left">Weight:</h6>
+                                                    <div className="float-left fontStats">Weight:</div>
                                                 </div>
                                                 <div className="col-md-6 col-6">
                                                     <h6 className="float-left">{this.state.weight} kg</h6>
@@ -249,7 +249,46 @@ export default class Pokemon extends Component {
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-6 col-6">
-                                                    <h6 className="float-left">Catch Rate:</h6>
+                                                    <div className="float-left fontStats">Abilities:</div>
+                                                </div>
+                                                <div className="col-md-6 col-6">
+                                                    <h6 className="float-left">{this.state.abilities}</h6>
+                                                </div>
+                                            </div>
+                                            <h4 className="float-left mt-3 mb-3 col-md-12 col-12 pd-0">Breeding</h4>
+                                            <div className="row">
+                                                <div className="col-md-6 col-6">
+                                                    <div className="float-left fontStats">Gender Ratio:</div>
+                                                </div>
+                                                <div className="col-md-6 col-6">
+                                                    <div className="row col-md-12 col-12">
+                                                        <div className="fontGender">{this.state.genderRatioMale}%</div>
+                                                        <div className="genderPos" style={{backgroundColor: '#6D7BE3'}}></div>
+                                                        <div className="fontGender" style={{marginLeft: '3px'}}>{this.state.genderRatioFemale}%</div>
+                                                        <div className="genderPos" style={{backgroundColor: '#9F449F'}}></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-md-6 col-6">
+                                                    <div className="float-left fontStats">Egg Group:</div>
+                                                </div>
+                                                <div className="col-md-6 col-6">
+                                                    <h6 className="float-left">{this.state.eggGroups}</h6>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-md-6 col-6">
+                                                    <div className="float-left fontStats">Egg Cycle:</div>
+                                                </div>
+                                                <div className="col-md-6 col-6">
+                                                    <h6 className="float-left">{this.state.types[0]}</h6>
+                                                </div>
+                                            </div>
+                                            <h4 className="float-left mt-3 mb-3 col-md-12 col-12 pd-0">Trainig</h4>
+                                            <div className="row">
+                                                <div className="col-md-6 col-6">
+                                                    <div className="float-left fontStats">Capture Rate:</div>
                                                 </div>
                                                 <div className="col-md-6 col-6">
                                                     <h6 className="float-left">{this.state.catchRate} %</h6>
@@ -257,19 +296,10 @@ export default class Pokemon extends Component {
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-6 col-6">
-                                                    <h6 className="float-left">Gender Ratio:</h6>
+                                                    <div className="float-left fontStats">Effort Points:</div>
                                                 </div>
                                                 <div className="col-md-6 col-6">
-                                                    <div className="row col-md-12 col-12">
-                                                        <div className="row col-md-6 col-6">
-                                                            <h6>{this.state.stats.genderRatioMale}%</h6>
-                                                            <div style={{width: '15px', height: '15px', borderRadius: '20px', backgroundColor: '#6D7BE3'}}></div>
-                                                        </div>
-                                                        <div className="row col-md-6 col-6">
-                                                            <h6>{this.state.stats.genderRatioFemale}%</h6>
-                                                            <div style={{width: '15px', height: '15px', borderRadius: '20px', backgroundColor: '#9F449F'}}></div>
-                                                        </div>
-                                                    </div>
+                                                    <h6 className="float-left">{this.state.evs}</h6>
                                                 </div>
                                             </div>
                                         </div>
