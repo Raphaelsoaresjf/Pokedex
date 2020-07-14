@@ -106,6 +106,11 @@
     color: #939393;
     font-weight: 500;
 }
+.dexTitle{
+    font-size: 47pt;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 600px) {
     .ml-25{
@@ -161,6 +166,11 @@
     }
     .fontGender{
         font-size: 9pt;
+    }
+    .dexTitle{
+        font-size: 30pt;
+        font-weight: bold;
+        margin-bottom: 20px;
     }
 
   }

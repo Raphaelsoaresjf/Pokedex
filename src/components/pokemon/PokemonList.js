@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import PokemonCard from './PokemonCard';
+import Pagination from '../layout/Pagination';
 
 export default class PokemonList extends Component {
 
     state = {
-        url: "https://pokeapi.co/api/v2/pokemon?limit=151",
+        url: "https://pokeapi.co/api/v2/pokemon?limit=12",
         pokemon: null
     };
 
@@ -19,6 +20,7 @@ export default class PokemonList extends Component {
     render(){
         return (
             <div className="container App">
+                <div className="dexTitle">Pokedex</div>
                 <React.Fragment>
                     {this.state.pokemon ? (
                         <div className="row">
@@ -34,6 +36,7 @@ export default class PokemonList extends Component {
                         <h1>Carregando Pokemons</h1>
                     )}     
                 </React.Fragment>
+                <div className="mx-auto col-md-5"><Pagination /></div>
             </div>
         );
     }

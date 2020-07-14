@@ -1,27 +1,31 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { MemoryRouter, Route } from 'react-router';
+import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
+import PaginationItem from '@material-ui/lab/PaginationItem';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > * + *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
-
-export default function PaginationControlled() {
-  const classes = useStyles();
-  const [page, setPage] = React.useState(1);
-  const handleChange = (event, value) => {
-    setPage(value);
-  };
-
+export default function PaginationLink() {
   return (
-    <div className={classes.root}>
-      <Typography>Page: {page}</Typography>
-      <Pagination count={10} page={page} onChange={handleChange} />
-    </div>
+    <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
+      <Route>
+        {({ location }) => {
+          const query = new URLSearchParams(location.search);
+          const page = parseInt(query.get('page') || '1', 10);
+          return (
+            <Pagination
+              page={page}
+              count={10}
+              renderItem={(item) => (
+                <PaginationItem
+                  component={Link}
+                  to={`/inbox${item.page === 1 ? '' : `?page=${item.page}`}`}
+                  {...item}
+                />
+              )}
+            />
+          );
+        }}
+      </Route>
+    </MemoryRouter>
   );
 }
