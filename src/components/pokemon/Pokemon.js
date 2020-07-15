@@ -101,7 +101,7 @@ export default class Pokemon extends Component {
             .split('-')
             .map(s => s.charAt(0).toUpperCase() + s.substring(1))
             .join(' ');     
-        });
+        }).join(', ');
 
         const evs = pokemonRes.data.stats.filter(stat => {
             if(stat.effort > 0){
@@ -226,8 +226,8 @@ export default class Pokemon extends Component {
                 </div>
                 <div className="card mt-65 col-md-6 ml-25">
                     <div className="mt90">
-                        <Tabs defaultActiveKey="profile" id="navTab">
-                            <Tab eventKey="about" title="About">
+                        <Tabs defaultActiveKey="profile" id="navTab" activeKey={'about'}>
+                            <Tab eventKey="about" title="About" >
                                 <div className="card-body">
                                     <div className="row">
                                         <div className="col-md-6">

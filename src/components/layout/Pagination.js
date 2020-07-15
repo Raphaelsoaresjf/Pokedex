@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 
-export default function PaginationLink() {
+export default function PaginationLink(props) {
+
+  const handleChange = (event, value) => {
+    props.setPage(value);
+  }
+
   return (
     <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
       <Route>
@@ -13,8 +18,9 @@ export default function PaginationLink() {
           const page = parseInt(query.get('page') || '1', 10);
           return (
             <Pagination
+              onChange={handleChange}
               page={page}
-              count={81}
+              count={props.maxItem}
               renderItem={(item) => (
                 <PaginationItem
                   component={Link}
