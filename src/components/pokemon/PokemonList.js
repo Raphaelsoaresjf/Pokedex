@@ -8,23 +8,23 @@ import Searchbar from '../layout/Searchbar';
 export default class PokemonList extends Component {
 
     state = {
-        url: "https://pokeapi.co/api/v2/pokemon?limit=25",
+        url: "https://pokeapi.co/api/v2/pokemon?limit=964",
         pokemon: null,
         currentPagination: 1,
-        searchBar: '',
-        maxItem: 1
+        searchBar: ''
     };
 
     async componentDidMount() {
         const res = await axios.get(this.state.url);
-        this.setState({ pokemon: res.data['results'], maxItem: Math.ceil(res.data['results'].length / 12) });
+        this.setState({ pokemon: res.data['results'] });
     }
 
     renderPagination = () => {
         if (this.state.pokemon != null) {
+            const maxItem = Math.ceil(this.state.pokemon.length / 12);
             return (
             <div className="mx-auto col-md-5">
-                <Pagination maxItem={this.state.maxItem} setPage={this.setPage} />
+                <Pagination maxItem={maxItem} setPage={this.setPage} />
             </div>
             )
         }
@@ -52,10 +52,6 @@ export default class PokemonList extends Component {
         if (searchBar.length > 0) {
             const array = this.state.pokemon.filter(f => f.name.includes(searchBar.toLowerCase()));
 
-            setTimeout(() => {
-                this.setState({maxItem: Math.ceil(array.length / 12), currentPagination: 1})
-            }, 50);
-
             return array.slice(this.calculatePageMin(), this.calculatePageMax()).map(pokemon => (
                 <PokemonCard
                 key={pokemon.name}
@@ -64,12 +60,6 @@ export default class PokemonList extends Component {
             />
             ));
         } else {
-            if (searchBar.length === 0) {
-                setTimeout(() => {
-                    this.setState({maxItem: Math.ceil(this.state.pokemon .length / 12), currentPagination: 1})
-                }, 50);
-            }
-            
             return this.state.pokemon.slice(this.calculatePageMin(), this.calculatePageMax()).map(pokemon => (
                 <PokemonCard
                     key={pokemon.name}
